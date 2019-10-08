@@ -279,7 +279,7 @@ server = Http.createServer (req, resp) ->
 
         process_url url, transferredHeaders, resp, max_redirects
       else
-        four_oh_four(resp, "checksum mismatch", "", "#{hmac_digest}:#{query_digest}")
+        four_oh_four(resp, "checksum mismatch", url, "#{hmac_digest}:#{query_digest}")
     else
       four_oh_four(resp, "No pathname provided on the server")
 

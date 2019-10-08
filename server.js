@@ -320,7 +320,7 @@
           url = Url.parse(dest_url);
           return process_url(url, transferredHeaders, resp, max_redirects);
         } else {
-          return four_oh_four(resp, "checksum mismatch", "", hmac_digest + ":" + query_digest);
+          return four_oh_four(resp, "checksum mismatch", url, hmac_digest + ":" + query_digest);
         }
       } else {
         return four_oh_four(resp, "No pathname provided on the server");
